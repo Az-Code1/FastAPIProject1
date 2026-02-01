@@ -39,8 +39,12 @@ def multiply(a, b):
     query()
 
 def divide(a, b):
-    print(f"The result of dividing a by b is: {a / b}")
-    query()
+    if b == 0:
+        print("You cannot divide by zero\n")
+        take_input()
+    else:
+        print(f"The result of dividing a by b is: {a / b}")
+        query()
 
 def square(a):
     print(f"Note: input b will be totally ignored and input a will be squared"
@@ -72,7 +76,7 @@ try:
             multiply(float(input("Please enter the first number you would like to multiply: \n")),
                 float(input("Please enter the second number you would like to multiply: ")))
         case 4:
-            divide(float(input("Note: The formula to use is a/b.\n Please enter a: \n")),
+            divide(float(input("Note: The formula to use is a/b.\nNote: b should not be zero\n Please enter a: \n")),
                 float(input("Please enter b: ")))
         case 5:
             square(float(input("Enter the number you want to square: ")))
@@ -84,8 +88,9 @@ try:
         case 8:
             remainder(int(input("You are just about to get the remainder of a "
                                 "number after dividing it with another(the second) number\n"
-                                "Note: The formula to use is a/b.\n Please enter a: \n")),
-                int(input("Please enter b: ")))
+                                "Note: The formula to use is a/b and the numbers must be whole number.\n"
+                                " Please enter a: \n")),
+                                int(input("Please enter b: ")))
         case _:
             print("Thank you for using this awesome calculator")
 except ValueError:
