@@ -22,7 +22,7 @@ class NumberGuessingGame:
             return False
 
         except ValueError:
-            print("❌ Please enter a valid number!")
+            print("Please enter a valid number!")
             return False
 
     def play(self):
